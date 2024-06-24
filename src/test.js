@@ -3,6 +3,15 @@ const test = (received, expected) => {
     if (expected.toString() !== received) throw `wrong result\n- expected: "${expected}"\n- received: "${received}"`;
 }
 
+let nan = new Float32Array([0.0 / 0.0, NaN, 0.0, 0.0]);
+nan[2] /= nan[1];
+nan[3] /= nan[0];
+let uint8 = new Uint8Array(nan.buffer);
+let result = JSON.stringify(Array.from(uint8));
+console.log(result)
+
+test(result, "[0,0,192,127,0,0,192,127,0,0,192,127,0,0,192,127]");
+
 test(1 / 100000, '0.00001');
 test(1.0 / 100000, '0.00001');
 test(1 / 100000.0, '0.00001');
