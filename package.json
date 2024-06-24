@@ -1,0 +1,25 @@
+{
+  "name": "determinism-quickjs",
+  "version": "1.0.0",
+  "description": "A script to test the determinism of IEEE-754 floating point operations.",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@jitl/quickjs-ng-wasmfile-release-asyncify": "^0.29.2",
+    "@jitl/quickjs-ng-wasmfile-release-sync": "^0.29.2",
+    "@jitl/quickjs-singlefile-cjs-release-asyncify": "^0.29.2",
+    "@jitl/quickjs-singlefile-cjs-release-sync": "^0.29.2",
+    "quickjs-emscripten": "^0.29.2"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.2"
+  }
+}
